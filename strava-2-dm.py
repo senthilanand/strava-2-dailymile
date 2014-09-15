@@ -35,6 +35,8 @@ for i in range(len(jsondata)):
 
 	activity_jsondata = json.loads(open('activity_output.json').read())
 	description = activity_jsondata["description"];
+	description += ". http://www.strava.com/activities/"+str(activityid)
+	
 
 	print("Distance:"+distance_miles)
 	print("Type:"+wtype)
