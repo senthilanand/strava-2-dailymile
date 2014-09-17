@@ -34,8 +34,10 @@ for i in range(len(jsondata)):
 	os.system(stravaactivitycmd);
 
 	activity_jsondata = json.loads(open('activity_output.json').read())
-	description = activity_jsondata["description"];
-	description += ". http://www.strava.com/activities/"+str(activityid)
+
+	description = str("http://www.strava.com/activities/")+str(activityid)+". ";
+	if activity_jsondata["description"] is not None:
+		description += activity_jsondata["description"];
 	
 
 	print("Distance:"+distance_miles)
